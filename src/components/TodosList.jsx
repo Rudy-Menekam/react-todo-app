@@ -1,8 +1,8 @@
-const TodosList = ({ todosProps }) => {
+const TodosList = ({ todosProps, setTodos }) => {
     return (
       <ul>
         {todosProps.map((todo) => (
-          <li>{todo.title}</li>
+          <TodoItem key={todo.id} itemProp={todo} setTodos={setTodos} />
         ))}
       </ul>
     );
