@@ -1,11 +1,11 @@
-const TodosList = ({ todosProps }) => {
-    return (
-      <ul>
-        {todosProps.map((todo) => (
-          <li>{todo.title}</li>
-        ))}
-      </ul>
-    );
-  };
-  export default TodosList;
-  
+import TodoItem from '@/components/TodoItem';
+const TodosList = ({ todosProps, handleChange, delTodo, setUpdate }) => {
+  return (
+    <ul>
+      {todosProps.map((todo) => (
+        <TodoItem key={todo.id} itemProp={todo} handleChange={handleChange} delTodo={delTodo} setUpdate={setUpdate}/>
+      ))}
+    </ul>
+  );
+};
+export default TodosList;
